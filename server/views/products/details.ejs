@@ -1,0 +1,71 @@
+<% include ../partials/header.ejs %>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <h1><%= title %></h1>
+      <form action="/products/<%= product._id %>" class="form" method="post">
+        <div class="form-group">
+          <label for="IdTextField">Product id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="productID"
+            placeholder="Product id"
+            name="productID"
+            value="<%= product.Productid %>"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="NameTextField">Product Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ProductName"
+            placeholder="Product name"
+            name="productName"
+            value="<%= product.Productname %>"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="DescTextField">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ProductDesc"
+            placeholder="Product Description"
+            name="productDesc"
+            value="<%= product.Description %>"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="PriceTextField">Price</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Productprice"
+            placeholder="Product Price"
+            name="productPrice"
+            value="<%= product.Price %>"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-check-square-o"></i> Submit
+        </button>
+        <a href="/products" class="btn btn-warning"
+          ><i class="fa fa-undo"></i> Cancel</a
+        >
+      </form>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>
